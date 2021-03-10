@@ -34,7 +34,7 @@ public class Instanciador : MonoBehaviour
     {
         randomNumberX = Random.Range(-18f, 18f);
         
-        randomNumberZ = Random.Range(-18f, 19f);
+        randomNumberZ = Random.Range(-18f, 18f);
         randomPos = new Vector3(randomNumberX, numberY, randomNumberZ);
         Vector3 finalPos = initPos.position + randomPos;
         Instantiate(huevos, finalPos, Quaternion.identity);
