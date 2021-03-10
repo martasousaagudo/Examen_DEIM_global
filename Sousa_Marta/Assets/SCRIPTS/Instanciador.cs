@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Instanciador : MonoBehaviour
 {
@@ -9,9 +10,12 @@ public class Instanciador : MonoBehaviour
     float numberY = 11f;
 
     public int contador = 0;
-    public int numerohuevos;
+    public int numerohuevosrotos;
     Vector3 randomPos;
     public Transform initPos;
+
+    [SerializeField] Text contadorHuevos;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -22,8 +26,8 @@ public class Instanciador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        
+
+        TextoHuevos();
     }
 
     public void crearHuevos()
@@ -38,14 +42,14 @@ public class Instanciador : MonoBehaviour
 
     IEnumerator tiempoHuevos()
     {
-        
+
         for (contador = 0; contador <= 5; contador++)
         {
             crearHuevos();
             yield return new WaitForSeconds(2f);
         }
 
-        
+
         for (contador = 6; contador <= 10; contador++)
         {
             crearHuevos();
@@ -57,8 +61,18 @@ public class Instanciador : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
         }
 
-
-
-
     }
+
+        public void TextoHuevos()
+        {
+            numerohuevosrotos = contador;
+            contadorHuevos.text = "Nº Huevos rotos: " + numerohuevosrotos;
+
+       /* if ( huevos.SetActive(false))
+        {
+            contadorHuevos.text++;
+        }*/
+        }
+
+    
 }
