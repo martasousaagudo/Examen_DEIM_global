@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Interactividad : MonoBehaviour
 {
-
+    public GameObject cesta;
+  
     public float velocidad = 3f;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Cesta();
     }
 
     // Update is called once per frame
@@ -31,6 +32,14 @@ public class Interactividad : MonoBehaviour
 
 
 
+    }
+
+    public void Cesta()
+    {
+        if (Input.GetKey(KeyCode.C))
+        {
+            cesta.SetActive(true);
+        }
     }
 
 
